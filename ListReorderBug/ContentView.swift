@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    let items = [
+           Item(title: "Someone Review Our Artifacts", status: .active),
+           Item(title: "Update Code Ownership of Files", status: .active),
+           Item(title: "Regression 3.12.4", status: .active),
+           Item(title: "Analysis Handoff", status: .idle),
+           Item(title: "Benefits Analysis", status: .complete)
+       ]
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ListView(model: Model(items: items))
     }
 }
 

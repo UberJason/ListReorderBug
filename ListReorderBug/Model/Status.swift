@@ -11,9 +11,7 @@ import SwiftUI
 
 enum Status: String, CaseIterable, Hashable, Codable {
     case active, waiting, idle, complete
-}
 
-extension Status {
     var color: Color {
         switch self {
         case .active: return Color(red: 231/255, green: 87/255, blue: 76/255)

@@ -45,7 +45,6 @@ struct ListView: View {
         .background(Color(NSColor.textBackgroundColor))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
-
 }
 
 struct QuestListView_Previews: PreviewProvider {

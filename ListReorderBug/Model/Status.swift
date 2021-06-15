@@ -14,24 +14,6 @@ enum Status: String, CaseIterable, Hashable, Codable {
 }
 
 extension Status {
-    var title: String {
-        switch self {
-        case .active: return "Active"
-        case .waiting: return "Waiting"
-        case .idle: return "Idle"
-        case .complete: return "Complete"
-        }
-    }
-    
-    var nsImage: NSImage? {
-        switch self {
-        case .active: return NSImage(named: NSImage.statusUnavailableName)
-        case .waiting: return NSImage(named: NSImage.statusPartiallyAvailableName)
-        case .idle: return NSImage(named: NSImage.statusNoneName)
-        case .complete: return NSImage(named: NSImage.statusAvailableName)
-        }
-    }
-    
     var color: Color {
         switch self {
         case .active: return Color(red: 231/255, green: 87/255, blue: 76/255)
@@ -40,12 +22,7 @@ extension Status {
         case .complete: return Color(red: 102/255, green: 198/255, blue: 85/255)
         }
     }
-    
-    var image: Image? {
-        guard let nsImage = nsImage else { return nil }
-        return Image(nsImage: nsImage)
-    }
-    
+
     var rank: Int {
         switch self {
             case .active: return 3

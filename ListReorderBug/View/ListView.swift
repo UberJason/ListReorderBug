@@ -23,8 +23,7 @@ class Model: ObservableObject {
 
 struct ListView: View {
     @StateObject var model: Model
-    @State var selectedQuest: Item?
-    
+
     var body: some View {
         NavigationView {
             List {
